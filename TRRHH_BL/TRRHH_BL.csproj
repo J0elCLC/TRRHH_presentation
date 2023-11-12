@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84C61B79-4FCF-4B0B-BEE8-88A2A5FF8C50}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TRRHH_BL</RootNamespace>
+    <AssemblyName>TRRHH_BL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Empleo_BL.cs" />
+    <Compile Include="Registro_BL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TRRHH_BE\TRRHH_BE.csproj">
+      <Project>{b5d972ce-e171-4253-ba8c-fbd6029776ab}</Project>
+      <Name>TRRHH_BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TRRHH_DATA\TRRHH_DATA.csproj">
+      <Project>{380b6a98-febe-4f10-9a93-6e45eecaec8d}</Project>
+      <Name>TRRHH_DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TRRHH_EF\TRRHH_EF.csproj">
+      <Project>{727bb451-dacb-4d34-983a-9a53454006a5}</Project>
+      <Name>TRRHH_EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TRRHH_presentation\TRRHH_presentation.csproj">
+      <Project>{9aadf9f2-f8ea-4a2c-8f0f-2c4846f1aa63}</Project>
+      <Name>TRRHH_presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
